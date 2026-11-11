@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "maptooltip-x",
+	"version": "${version}",
+	"name": "MapTooltip X",
+	"description": "Hold Shift while hovering a filled map to preview its real, server-synchronized contents inside the tooltip.",
+	"authors": [
+		"notdeathlyatall"
+	],
+	"contact": {
+		"sources": "https://github.com/notdeathlyatall/Map-Tooltip"
+	},
+	"license": "All Rights Reserved",
+	"icon": "assets/maptooltip-x/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.notdeathly.maptooltip.client.MapTooltipClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "maptooltip.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

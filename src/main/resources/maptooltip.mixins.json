@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "notdeathlyatall.map.tt.mixin",
+	"package": "com.notdeathly.maptooltip.mixin",
 	"compatibilityLevel": "JAVA_25",
-	"mixins": [
-		"ExampleMixin"
+	"client": [
+		"ItemStackTooltipMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

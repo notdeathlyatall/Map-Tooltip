@@ -1,0 +1,7 @@
+
+# Local reference sources (not part of the mod)
+.mc-src/
+.fabric-src/
+.gradle/
+build/
+run/
