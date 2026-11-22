@@ -35,6 +35,20 @@ same binaries under each project's `build/libs`.
 Install **only the JAR for your game version**. Both artifacts use the mod ID `maptooltip-x`; they
 are alternative builds, not add-ons.
 
+### Dependencies
+
+| | 26.3 | 1.21.11 |
+|---|---|---|
+| Required at runtime | Minecraft 26.3, Fabric Loader 0.20.1+, Fabric API, Java 25+ | Minecraft 1.21.11, Fabric Loader 0.17.3+, Fabric API, Java 21+ |
+| Built against | Fabric Loader 0.20.1, Fabric API 0.166.0+26.3 | Fabric Loader 0.20.1, Fabric API 0.141.6+1.21.11 |
+| Build tooling | Gradle 9.8.2 wrapper, Fabric Loom 1.19.4, official Mojang names | Gradle 9.8.2 wrapper, Fabric Loom 1.19-SNAPSHOT, official Mojang mappings |
+| Optional compatibility | Shulker Box Tooltip for your game version (not required) | Shulker Box Tooltip for your game version (not required) |
+
+Fabric API is declared as `fabric-api: *` in both `fabric.mod.json` files and is supplied by the
+player; it is not bundled in either JAR. No other runtime libraries are required, bundled or shaded.
+The mod is not compiled against Shulker Box Tooltip; compatibility uses the shared vanilla tooltip
+component API and a mod-ID check.
+
 ## 2. Features
 
 - Shift + hover over `Items.FILLED_MAP` shows a real preview of the synchronized map.
@@ -387,6 +401,8 @@ background network activity. It reads only:
 Nothing is written outside normal Minecraft memory and rendering. There is no account system, no
 configuration upload and no third-party service.
 
+The full policy is in [`PRIVACY.md`](PRIVACY.md).
+
 ## 12. Known limitations
 
 - **In-game behaviour is unverified in this environment.** Both projects compile and package
@@ -428,6 +444,8 @@ MapTooltip-X/
 ├── gradle/wrapper/
 ├── README.md
 ├── LICENSE
+├── PRIVACY.md                            privacy policy
+├── TERMS.md                              terms of service
 ├── dist/                                 prebuilt downloadable JARs
 │   ├── README.md
 │   ├── maptooltip-x-1.0.0-26.3.jar
@@ -469,6 +487,13 @@ explicit.
 
 ## 14. License
 
-The repository is licensed under the MIT License; see `LICENSE`. Both mod metadata files declare
-`MIT`, matching that file. Fabric API, Minecraft and their assets remain under their own licenses;
-no Minecraft assets are redistributed in these JARs.
+The repository is licensed under the MIT License; see [`LICENSE`](LICENSE). Both mod metadata files
+declare `MIT`, matching that file. If you redistribute the mod or a modified version, keep the MIT
+copyright and permission notice with it. Fabric API, Minecraft and their assets remain under their
+own licenses; no Minecraft assets are redistributed in these JARs.
+
+## 15. Terms of Service
+
+Use of MapTooltip X is also described in [`TERMS.md`](TERMS.md), including third-party rules,
+the warranty disclaimer and the limitation of liability. The MIT License remains the license for the
+software and controls over any conflicting term; see [`LICENSE`](LICENSE).
