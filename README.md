@@ -20,13 +20,17 @@ container open.
 | | 26.3 | 1.21.11 |
 |---|---|---|
 | Minecraft | 26.3 (Wilderness Bound) | 1.21.11 |
-| Mod JAR | `build/libs/maptooltip-x-1.0.0.jar` | `1.21.11/build/libs/maptooltip-x-1.0.0.jar` |
+| Mod JAR | `dist/maptooltip-x-1.0.0-26.3.jar` | `dist/maptooltip-x-1.0.0-1.21.11.jar` |
 | Java | 25 | 21 |
 | Fabric Loader | 0.20.1 | 0.20.1 (minimum 0.17.3) |
 | Fabric API | 0.166.0+26.3 | 0.141.6+1.21.11 |
 | Loom | 1.19.4, non-remapping | 1.19-SNAPSHOT, remapping |
 | Mappings | Official Mojang names | Official Mojang names |
 | Environment | Client only | Client only |
+
+Prebuilt copies of both JARs are tracked in [`dist/`](dist/README.md) for direct download, with
+SHA-256 checksums in [`dist/README.md`](dist/README.md). The build commands below still produce the
+same binaries under each project's `build/libs`.
 
 Install **only the JAR for your game version**. Both artifacts use the mod ID `maptooltip-x`; they
 are alternative builds, not add-ons.
@@ -95,7 +99,7 @@ provided through the shared vanilla tooltip component API and a Fabric Loader mo
 1. Install **Java 25** and a launcher that can run Minecraft 26.3.
 2. Install **Fabric Loader 0.20.1** (or newer) for Minecraft 26.3.
 3. Place **Fabric API 0.166.0+26.3** (or a compatible newer 26.3 build) in the `mods` folder.
-4. Place `build/libs/maptooltip-x-1.0.0.jar` in the same `mods` folder.
+4. Place `dist/maptooltip-x-1.0.0-26.3.jar` in the same `mods` folder.
 5. Start the client.
 
 ### Minecraft 1.21.11
@@ -103,7 +107,7 @@ provided through the shared vanilla tooltip component API and a Fabric Loader mo
 1. Install **Java 21** and a launcher that can run Minecraft 1.21.11.
 2. Install **Fabric Loader 0.20.1** (minimum 0.17.3) for Minecraft 1.21.11.
 3. Place **Fabric API 0.141.6+1.21.11** (or a compatible newer 1.21.11 build) in the `mods` folder.
-4. Place `1.21.11/build/libs/maptooltip-x-1.0.0.jar` in the same `mods` folder.
+4. Place `dist/maptooltip-x-1.0.0-1.21.11.jar` in the same `mods` folder.
 5. Start the client.
 
 The mod is client-side. It works on vanilla multiplayer servers; the server does not need the mod
@@ -424,6 +428,10 @@ MapTooltip-X/
 ├── gradle/wrapper/
 ├── README.md
 ├── LICENSE
+├── dist/                                 prebuilt downloadable JARs
+│   ├── README.md
+│   ├── maptooltip-x-1.0.0-26.3.jar
+│   └── maptooltip-x-1.0.0-1.21.11.jar
 ├── src/main/                            26.3 sources and resources
 │   ├── java/com/notdeathly/maptooltip/
 │   │   ├── MapTooltip.java
