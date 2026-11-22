@@ -10,7 +10,7 @@
 	"contact": {
 		"sources": "https://github.com/notdeathlyatall/Map-Tooltip"
 	},
-	"license": "All Rights Reserved",
+	"license": "MIT",
 	"icon": "assets/maptooltip-x/icon.png",
 	"environment": "client",
 	"entrypoints": {

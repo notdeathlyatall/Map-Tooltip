@@ -461,6 +461,6 @@ explicit.
 
 ## 14. License
 
-The repository's `LICENSE` file applies. The mod metadata currently declares
-`All Rights Reserved`, matching that file. Fabric API, Minecraft and their assets remain under
-their own licenses; no Minecraft assets are redistributed in these JARs.
+The repository is licensed under the MIT License; see `LICENSE`. Both mod metadata files declare
+`MIT`, matching that file. Fabric API, Minecraft and their assets remain under their own licenses;
+no Minecraft assets are redistributed in these JARs.
