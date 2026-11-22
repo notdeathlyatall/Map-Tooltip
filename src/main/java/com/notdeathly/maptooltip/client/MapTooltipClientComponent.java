@@ -78,7 +78,9 @@ public final class MapTooltipClientComponent implements ClientTooltipComponent {
 	public void extractImage(Font font, int x, int y, int w, int h, GuiGraphicsExtractor graphics) {
 		int currentY = y;
 		if (this.original != null) {
-			this.original.extractImage(font, x, currentY, w, this.original.getHeight(font), graphics);
+			// Pass the real tooltip height through: Shulker Box Tooltip uses it to choose
+			// whether its outside preview goes above or below the complete tooltip.
+			this.original.extractImage(font, x, currentY, w, h, graphics);
 			currentY += this.original.getHeight(font) + GAP;
 		}
 

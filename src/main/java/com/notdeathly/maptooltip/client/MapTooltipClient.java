@@ -13,6 +13,6 @@ public final class MapTooltipClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		ClientTooltipComponentCallback.EVENT.register(TooltipHandler::getClientComponent);
-		MapTooltip.LOGGER.info("MapTooltip X ready: hold Shift over a filled map to preview it.");
+		MapTooltip.LOGGER.info("MapTooltip X ready: hold Shift over a filled map to preview it. With Shulker Box Tooltip installed, hold Shift+Ctrl over a container to see its nested map.");
 	}
 }

@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.notdeathly.maptooltip.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"ItemStackTooltipMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

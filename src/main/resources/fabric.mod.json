@@ -3,7 +3,7 @@
 	"id": "maptooltip-x",
 	"version": "${version}",
 	"name": "MapTooltip X",
-	"description": "Hold Shift while hovering a filled map to preview its real, server-synchronized contents inside the tooltip.",
+	"description": "Hold Shift while hovering a filled map to preview its real, server-synchronized contents inside the tooltip. Shulker Box Tooltip is supported: plain Shift leaves its container preview alone, and Shift+Ctrl adds the nested map preview.",
 	"authors": [
 		"notdeathlyatall"
 	],

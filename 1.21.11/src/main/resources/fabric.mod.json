@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "maptooltip-x",
+	"version": "${version}",
+	"name": "MapTooltip X",
+	"description": "Hold Shift while hovering a filled map to preview its real, server-synchronized contents inside the tooltip. Shulker Box Tooltip is supported: plain Shift leaves its container preview alone, and Shift+Ctrl adds the nested map preview.",
+	"authors": [
+		"notdeathlyatall"
+	],
+	"contact": {
+		"sources": "https://github.com/notdeathlyatall/Map-Tooltip"
+	},
+	"license": "All Rights Reserved",
+	"icon": "assets/maptooltip-x/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.notdeathly.maptooltip.client.MapTooltipClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "maptooltip.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
