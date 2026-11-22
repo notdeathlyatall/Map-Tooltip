@@ -1,0 +1,70 @@
+name: Publish GitHub releases
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-releases.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Publish Minecraft 26.3 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v1.0.0-26.3" >/dev/null 2>&1; then
+            echo "Release v1.0.0-26.3 already exists; skipping."
+            exit 0
+          fi
+          cat > "$RUNNER_TEMP/notes-26.3.md" <<'EOF'
+          Client-only Fabric build for **Minecraft 26.3**.
+
+          **Requirements:** Java 25+, Fabric Loader 0.20.1+, Fabric API (built against 0.166.0+26.3).
+
+          Install only this JAR. The 1.21.11 build is a separate release. Shulker Box Tooltip is optional; plain Shift leaves its preview alone, and Shift+Ctrl adds the nested map preview.
+
+          **SHA-256:** `c874d496b487ba44c53ef56a0be15275c247c29f82b5ecfce283b95769e0b633`
+
+          See the [README](https://github.com/notdeathlyatall/Map-Tooltip/blob/main/README.md) for controls, installation, privacy and terms.
+          EOF
+          gh release create "v1.0.0-26.3" \
+            "dist/maptooltip-x-1.0.0-26.3.jar" \
+            --target "$GITHUB_SHA" \
+            --title "MapTooltip X 1.0.0 for Minecraft 26.3" \
+            --notes-file "$RUNNER_TEMP/notes-26.3.md"
+
+      - name: Publish Minecraft 1.21.11 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view "v1.0.0-1.21.11" >/dev/null 2>&1; then
+            echo "Release v1.0.0-1.21.11 already exists; skipping."
+            exit 0
+          fi
+          cat > "$RUNNER_TEMP/notes-1.21.11.md" <<'EOF'
+          Client-only Fabric build for **Minecraft 1.21.11**.
+
+          **Requirements:** Java 21+, Fabric Loader 0.17.3+, Fabric API (built against 0.141.6+1.21.11).
+
+          Install only this JAR. The 26.3 build is a separate release. Shulker Box Tooltip is optional; plain Shift leaves its preview alone, and Shift+Ctrl adds the nested map preview.
+
+          **SHA-256:** `8f9d106b26633bdeb3bbf6b7f842a528fb01cf25f4e5177095514ce9627943f2`
+
+          See the [README](https://github.com/notdeathlyatall/Map-Tooltip/blob/main/README.md) for controls, installation, privacy and terms.
+          EOF
+          gh release create "v1.0.0-1.21.11" \
+            "dist/maptooltip-x-1.0.0-1.21.11.jar" \
+            --target "$GITHUB_SHA" \
+            --title "MapTooltip X 1.0.0 for Minecraft 1.21.11" \
+            --notes-file "$RUNNER_TEMP/notes-1.21.11.md"
